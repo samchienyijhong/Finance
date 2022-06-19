@@ -1,3 +1,8 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
 /* Size for brand */
 nav .navbar-brand {
     font-size: xx-large;
@@ -23,7 +28,7 @@ nav .navbar-brand .green {
 td.shrink {
     white-space: nowrap;
     width: 350px;
-  }
+}
 
 .bxs-heart {
     color: red;

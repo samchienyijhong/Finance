@@ -24,3 +24,7 @@ td.shrink {
     white-space: nowrap;
     width: 350px;
   }
+
+.bxs-heart {
+    color: red;
+}

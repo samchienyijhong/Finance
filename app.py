@@ -134,7 +134,7 @@ def index():
         shares = row["sum_shares"]
         if shares > 0:
             db.execute(
-                "INSERT INTO stocks (user_id, symbol, shares) VALUES (?, ?, ?) ON CONFLICT (symbol) DO UPDATE SET shares = ?;", user_id, symbol, shares, shares)
+                "INSERT INTO stocks (user_id, symbol, shares) VALUES (?, ?, ?) ON CONFLICT (symbol) DO UPDATE SET shares = ?", user_id, symbol, shares, shares)
         else:
             db.execute(
                 "DELETE FROM stocks WHERE user_id = ? AND symbol = ?", user_id, symbol)

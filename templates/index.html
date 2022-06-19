@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Stocks</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Value</th>
+            <th scope="col">Buy & Sell</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.shares }}</td>
+            <td>{{ usd(stock.price) }}</td>
+            <td>{{ usd(stock.value) }}</td>
+            <td class="shrink">
+                <form id="transaction" action="/" method="post">
+                    <div class="input-group">
+                        <input class="form-control" type="number" min="1" name="shares" placeholder="Shares">
+                        <input type="hidden" name="symbol" value="{{ stock.symbol }}">
+                        <div class="input-group-append">
+                            <input class="btn btn-outline-secondary" type="submit" name="buy" value="Buy">
+                            <input class="btn btn-outline-secondary" type="submit" name="sell" value="Sell">
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="text-end" colspan="4"></th>
+            <td><b>Cash: </b>{{ usd(cash) }} <b>Total: </b>{{ usd(total) }}</td>
+        </tr>
+    </tfoot>
+</table>
+{% endblock %}

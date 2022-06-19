@@ -2,6 +2,4 @@
 https://cs50.harvard.edu/x/2022/psets/9/finance/
 
 ## CloudFront <---> Heroku
-https://finance-cyijhong.herokuapp.com/
-
 https://finance.cyijhong.awsps.myinstance.com/

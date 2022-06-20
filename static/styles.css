@@ -89,12 +89,17 @@ and also iPads specifically.
 	Label the data
 	*/
     td:nth-of-type(1):before {
-        content: "Stocks";
+        content: "Stock";
         font-weight: bold;
     }
 
     td:nth-of-type(2):before {
         content: "Shares";
+        font-weight: bold;
+    }
+
+    .quoted td:nth-of-type(2):before {
+        content: "Name";
         font-weight: bold;
     }
 

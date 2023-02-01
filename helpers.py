@@ -62,13 +62,3 @@ def lookup(symbol):
 def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
-
-
-def check(value):
-    """Check input"""
-    try:
-        if int(value) > 0:
-            return True
-    except (TypeError, ValueError):
-        return False
-    return False
